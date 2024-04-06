@@ -22,7 +22,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
- sonarcloud:
+  sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
     steps:
@@ -34,11 +34,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          
   Automation-Testing:
     needs: sonarcloud
     runs-on: ubuntu-latest  # Runs on Ubuntu environment
-
+    
     # Steps to execute within the job
     steps:
       # Step to checkout the repository code
@@ -80,7 +79,7 @@ jobs:
       #     git push
   # Single deploy job since we're just deploying
   deploy:
-    needs: automation-testing
+    needs: Automation-Testing
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
