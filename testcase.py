@@ -12,7 +12,7 @@ options.add_argument('--no-sandbox')
 driver = webdriver.Chrome(service=service, options=options)
 
 # URL of your webpage
-URL = 'https://scifigurmeet.github.io/magicwebsite/'
+URL = 'https://yaman0808.github.io/magicwebsite/'
 
 try:
     # Open the webpage
