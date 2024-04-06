@@ -22,7 +22,21 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+sonar.projectKey=yaman0808_magicwebsite
+sonar.organization=yaman0808
+
+# This is the name and version displayed in the SonarCloud UI.
+#sonar.projectName=magicwebsite
+#sonar.projectVersion=1.0
+
+
+# Path is relative to the sonar-project.properties file. Replace "\" by "/" on Windows.
+#sonar.sources=.
+
+# Encoding of the source code. Default is default system encoding
+#sonar.sourceEncoding=UTF-8
   Automation-Testing:
+    needs: sonarcloud
     runs-on: ubuntu-latest  # Runs on Ubuntu environment
 
     # Steps to execute within the job
